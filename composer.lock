@@ -1,0 +1,97 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "67cec7ed49bdfabbe17d326e97649e1a",
+    "packages": [
+        {
+            "name": "t4g/kit-memcached",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/t4g/kit-memcached.git",
+                "reference": "b14d2bd1509d134406abd70a15b14abd9c95d912"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/t4g/kit-memcached/zipball/b14d2bd1509d134406abd70a15b14abd9c95d912",
+                "reference": "b14d2bd1509d134406abd70a15b14abd9c95d912",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Kit\\DB\\Memcached": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Younge",
+                    "email": "dev@anvil.za.net"
+                }
+            ],
+            "description": "Kit style wrap for class memcached",
+            "time": "2013-11-21 03:58:35"
+        },
+        {
+            "name": "t4g/kit-singleton",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/t4g/kit-singleton.git",
+                "reference": "8b42007a7fe1e8ec5374d0b95f6fdbb9073078c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/t4g/kit-singleton/zipball/8b42007a7fe1e8ec5374d0b95f6fdbb9073078c5",
+                "reference": "8b42007a7fe1e8ec5374d0b95f6fdbb9073078c5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Kit\\Singleton\\": "src/Singleton"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Younge",
+                    "email": "unkyle.za@gmail.com"
+                }
+            ],
+            "description": "Simple singleton abstract class",
+            "time": "2013-11-19 18:52:58"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": [
+
+    ],
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}

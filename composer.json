@@ -1,0 +1,31 @@
+{
+    "name": "t4g/wp-kitcurl",
+    "description": "Wordpress backend plugin offering the KitCurl class",
+    "version":"1.0.0",
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kyle Younge",
+            "email": "dev@anvil.za.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "config": {
+        "vendor-dir": "vendor",
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-0": {
+            "KitWP\\":  "wp-kitcurl/psr0",
+            "Kit\\":    "wp-kitcurl/psr0/vendor"
+        }
+    },
+    "require": {
+        "t4g/kit-memcached": "1.*",
+        "t4g/kit-singleton": "*"
+    }
+
+}

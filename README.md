@@ -1,0 +1,4 @@
+wp-kitcurl
+=============
+
+_internal
