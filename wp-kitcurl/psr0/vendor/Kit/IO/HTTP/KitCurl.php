@@ -7,9 +7,9 @@
  */
 
 namespace Kit\IO\HTTP;
-
 use Kit\IO\HTTP\KitCurl\KitCurlOptions;
 use Kit\IO\HTTP\KitCurl\KitCurlRequest;
+
 
 class KitCurl {
 
@@ -100,9 +100,9 @@ class KitCurl {
         {
             if(self::$_cache_instance === null)
             {
-                $engine = self::$_cache_engine;
+                $engine = 'KitCurl\\Cache\\'.self::$_cache_engine;
 
-                self::$_cache_instance = new \Kit\IO\HTTP\KitCurl\Cache\$engine();
+                self::$_cache_instance = new $engine();
             }
         }
         elseif($state===FALSE)
