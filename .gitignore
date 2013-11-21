@@ -1,2 +1,5 @@
 /vendor
 example/wordpress
+docs/library
+developer/vendor
+bin/phpdoc.php

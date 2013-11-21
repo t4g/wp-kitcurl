@@ -87,7 +87,7 @@ class KitCurl {
     }
 
 
-    public function cache_enable(KitCurlOptions $state = null)
+    public function cache_enabled(KitCurlOptions $state = null)
     {
 
         if($state!== null)

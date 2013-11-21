@@ -131,7 +131,7 @@ class KitCurlResponce {
     /**
      * @return null
      */
-    public function getIsCached()
+    public function getIsViaCached()
     {
         return $this->_iscached;
     }

@@ -1,0 +1,24 @@
+{
+    "name": "t4g/developertools",
+    "description": "Toolkit for generating project documentation, and later other stuff",
+    "version":"1.0.0",
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kyle Younge",
+            "email": "dev@anvil.za.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "config": {
+        "vendor-dir": "vendor",
+        "bin-dir": "../bin"
+    },
+    "require": {
+        "phpdocumentor/phpdocumentor": "*"
+    }
+
+}
