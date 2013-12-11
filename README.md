@@ -1,8 +1,9 @@
 wp-kitcurl
 =============
 
+### This project is in heavy beta & refactoring!
+
 ##Introduction
-wp-kitcurl is a WordPress implementation of the Kit-KitCurl project. 
 
 This project exposes the following **namespaces** for use in your custom plugins and themes:
 * Kit\IO\HTTP\KitCurl
@@ -12,12 +13,12 @@ This project exposes the following **namespaces** for use in your custom plugins
 ### About KitCurl
 KitCurl is a cURL based proxy service for loading external resources server side (for the times you just forced to).
 Why KitCurl over cURL or fopen?
- * Written for server proformance and stablity.
+ * Written for server performance and stability.
  * Composer.phar driven
  * Modern PSR-0 coding pattern
  * Access to rationalised cURL configuration, like sane timeouts.
- * Memcached support with transparent failover for easiler development installs.
- * Support for mutliple memcached servers with failover and loadbalancing.
+ * Memcached support with transparent failover for easier development installs.
+ * Support for multiple memcached servers with failover and load-balancing.
  * Abstracted cache support for rapidly adding support for other caching systems.   
  
 ## Installation
@@ -55,7 +56,8 @@ Installation is done in bash (for now)
 
 #### Basic request
 
-    ** Procedural **
+** Procedural **
+
          
          $kitcurl = new Kit\IO\HTTP\KitCurl();
          
@@ -63,45 +65,110 @@ Installation is done in bash (for now)
          
          $request -> set_timeout(3);   // optional, override setting on the fly
          
-         $responce = $request -> execute();
+         $response = $request -> execute();
          
          
-    ** OOP **
+** OOP **
+
          
          $kitcurl = new Kit\IO\HTTP\KitCurl();
          
          echo $kitcurl -> new_http_rawget(<url>) -> set_timeout(3) -> execute();
          
          
-    ** STATIC OOP **
+** Static OOP **
+
          
          use Kit\IO\HTTP as Kit
          
-         echo Kit\KitCurlSingleton() -> new_http_rawget(<url>) -> set_timeout(3) -> execute();
-         
-         
-    ** The responce **
+         echo Kit\KitCurlSingleton() -> new_http_rawget(<url>) -> noCache -> execute();
+
+
+** The working with the response **
+
          
          // get contents
-         $mycontents = $responce;     // or echo $responce; etc etc
+         $mycontents = $response;     // or echo $response; etc etc
          
-         // explore the responce
-         echo $responce->getSize();   // total size of the doc
+
+         // explore the response
+         echo $response->getSize();   // total size of the doc
          
-         if( $responce->getIsViaCached() ){ echo "Bingo" }   // total size of the doc
+
+         if( $response->getIsViaCached() ){ echo "Bingo" }   // total size of the doc
+         
+         // .... For a full list of methods available see [[ docs ]]  
 
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+#### Using named requests
+
+         
+         $kitcurl -> add_named( 'something', 'http://api.example.com/blaa' );
+         
+         $kitcurl -> add_named( 'example',   'http://api.v2.example.com/blopen' );
+         
+         $nparam = array(
+              'test'    => 'value',
+              'version' => 'test'.
+         )
+         
+         echo $kitcurl -> new_http_get('example') -> params($param) -> execute();
+         
+         
+#### POST requests
+
+         $postdata = array(
+              'myfile'         => get_file_contents('~/etc/passed'),
+              'or_login_deets' => 'myuser'
+         )
+         
+         $kitcurl -> new_http_get('example') -> post($postdata) -> execute() -> getHeaders();
+
+
+#### Advanced : Working with the caching layer
+
+** Cache options ** 
+
+         ....
+         
+         use Kit\IO\HTTP\KitCurl as KitCurl;            // optional
+         
+         
+         $kitcurl -> cache_enabled(  KitCurl/KitCurlOptions::CACHE_DISABLED  );
+         
+         
+         
+** Working with the Kit\DB\Memcached backend **
+         
+
+         ....
+        
+         //flushing
+         $kitcurl -> cache() -> flush();
+         
+         
+         //advanced stuff 
+         $kitcurl -> cache() -> backend() -> getStats(); 
+         
+         $kitcurl -> cache() -> backend() -> getServerList();
+         
+         
+
+
+#### Generate More Documentation
 
 
 
-##Variables
-###Template Syntax
-The most basic example looks like this:
+         soap@codex:plugins/wp-kitcurl$ 
+         
+         soap@codex:plugins/wp-kitcurl$ ./bin/generate_phpdocs.sh
+         
+         
+** If you require phpdoc to be installed **
 
-	{$name}
 
-If {$name} doesn't contain any value, null is returned. It's also possible to use a dot as a separator.
-
-	{$foo.bar}
-
+         cd ./developer
+         
+         php ../bin/composer.phar install
+         
+         
