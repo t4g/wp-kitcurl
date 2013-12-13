@@ -125,6 +125,46 @@ Installation is done in bash (for now)
          $kitcurl -> new_http_get('example') -> post($postdata) -> execute() -> getHeaders();
 
 
+#### KitCurlRequest Sample
+
+          HelloKit\IO\HTTP\KitCurl\KitCurlRequest Object
+          (
+             [_timeout_enabled:protected] =&gt; 1
+             [_timeout_value:protected] =&gt; 5
+             [_uncached:protected] =&gt; 
+             [_expire_cache:protected] =&gt; 600
+             [_inst_caller:Kit\IO\HTTP\KitCurl\KitCurlRequest:private] =&gt; Kit\IO\HTTP\KitCurl Object
+                 (
+                 )
+         
+             [_inst_responce:Kit\IO\HTTP\KitCurl\KitCurlRequest:private] =&gt; Kit\IO\HTTP\KitCurl\KitCurlResponce Object
+                 (
+                     [_data:protected] =&gt; 
+                     [_headers:protected] =&gt; 
+                     [_status:protected] =&gt; 0
+                     [_path:protected] =&gt; 
+                     [_iscached:Kit\IO\HTTP\KitCurl\KitCurlResponce:private] =&gt; 
+                     [_stat_size:Kit\IO\HTTP\KitCurl\KitCurlResponce:private] =&gt; 
+                     [_stat_microtime_start:Kit\IO\HTTP\KitCurl\KitCurlResponce:private] =&gt; 0.36297200 1386319704
+                     [_stat_microtime_total:Kit\IO\HTTP\KitCurl\KitCurlResponce:private] =&gt; 
+                 )
+
+             [_inst_pcurl:Kit\IO\HTTP\KitCurl\KitCurlRequest:private] =&gt; Kit\IO\HTTP\Curl Object
+                 (
+                     [_instCURLCopy:Kit\IO\HTTP\Curl:private] =&gt; 
+                     [_response:Kit\IO\HTTP\Curl:private] =&gt; Array
+                         (
+                         )
+
+                     [_complete:Kit\IO\HTTP\Curl:private] =&gt; 
+                 )
+
+             [url:Kit\IO\HTTP\KitCurl\KitCurlRequest:private] =&gt; http://apple.com
+             [reqtype:Kit\IO\HTTP\KitCurl\KitCurlRequest:private] =&gt; 
+         )
+
+
+
 #### Advanced : Working with the caching layer
 
 ** Cache options ** 
