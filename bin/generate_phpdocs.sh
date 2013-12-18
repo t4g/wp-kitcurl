@@ -10,7 +10,7 @@ echo "INSTALL DIR ${_INSTALLPATH}"
 _PHPDOC="bin/phpdoc.php"
 
 
-[[ ! -f $_PHPDOC ]] && echo "gg" #[[ -f `which phpdoc` ]] && _PHPDOC=`which phpdoc` || echo "no phpdoc library found"
+[[ ! -f $_PHPDOC ]] && [[ -f `which phpdoc` ]] && _PHPDOC=`which phpdoc` || echo "no phpdoc library found"
 
 echo "Using this $_PHPDOC";
 
