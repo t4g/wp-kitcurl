@@ -87,7 +87,7 @@ class KitCurl {
     }
 
 
-    public function cache_enabled(KitCurlOptions $state = null)
+    public function cache_enable(KitCurlOptions $state = null)
     {
 
         if($state!== null)
@@ -95,6 +95,7 @@ class KitCurl {
             self::$_cache_enabled = (bool) $state;
         }
         else return self::$_cache_enabled;
+
 
         if($state===TRUE)
         {
@@ -118,7 +119,6 @@ class KitCurl {
     public function &cache(){
 
         if(self::$_cache_instance === null) return FALSE;
-
 
         return self::$_cache_instance;
     }

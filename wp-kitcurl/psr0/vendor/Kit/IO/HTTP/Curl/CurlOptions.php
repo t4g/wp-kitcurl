@@ -13,7 +13,7 @@ use Kit\IO\HTTP\Curl;
 
 class CurlOptions {
 
-    private static $options = array(
+    static $options = array(
 
         CURLOPT_USERAGENT => "Mozilla/5.0 (Windows; U; Windows NT 5.1; rv:1.7.3) Gecko/20041001 Firefox/0.10.1",
 
@@ -21,7 +21,7 @@ class CurlOptions {
 
         CURLOPT_ENCODING => "",
 
-        CURLOPT_RETURNTRANSFER => TRUE,
+        CURLOPT_RETURNTRANSFER => FALSE,
 
         CURLOPT_AUTOREFERER => TRUE,
 
@@ -43,10 +43,11 @@ class CurlOptions {
         self::$options[$option]=$value;
     }
 
-    static public function applyOptions(Curl &$handle)
+    static public function applyOptions(&$handle)
     {
         if(!empty(self::$options))
             curl_setopt_array($handle,self::$options);
+        //print_r($handle)."ghghg";
     }
 
     static public function loadMixedArray($array)

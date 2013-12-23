@@ -44,7 +44,7 @@ class Memcached implements KitCurlCacheInterface {
         return self::$memcached->flush();
     }
 
-    function &backend($key)
+    function &backend()
     {
         return self::$memcached;
     }

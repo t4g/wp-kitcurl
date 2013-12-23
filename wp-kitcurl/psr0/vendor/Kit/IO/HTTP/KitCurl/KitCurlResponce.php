@@ -33,7 +33,7 @@ class KitCurlResponce {
     public function __construct()
     {
 
-        $this->_stat_microtime_start = microtime(FALSE);
+        $this->_stat_microtime_start = microtime(TRUE);
 
     }
 
@@ -58,7 +58,7 @@ class KitCurlResponce {
 
     private function _setTimer()
     {
-        $this->_stat_microtime_total = microtime(FALSE) - $this->_stat_microtime_start;
+        $this->_stat_microtime_total = microtime(TRUE) - $this->_stat_microtime_start;
     }
 
     /**

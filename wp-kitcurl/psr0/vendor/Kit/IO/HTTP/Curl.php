@@ -33,16 +33,16 @@ class Curl {
 
             self::$_instCURL = curl_init();
 
-            CurlOptions::setOption(CURLOPT_HEADERFUNCTION, array($this, '_setHeader'));
+            Curl\CurlOptions::setOption(CURLOPT_HEADERFUNCTION, array($this, '_setHeader'));
 
-            CurlOptions::applyOptions($this);
-
+            Curl\CurlOptions::applyOptions(self::$_instCURL);
+echo "kjhjgjgjhgjhghjgjhghj";
         }
 
     }
 
 
-    public function __callStatic($method,$args){
+    public static function __callStatic($method,$args){
         if(in_array($method,self::$exposed_methods)
            && is_callable($method))
                return call_user_func_array($method,$args);
@@ -78,7 +78,7 @@ class Curl {
 
         $this->_response['content']  = curl_exec($this->_instCURLCopy);
 
-        $this->_response['responce'] = curl_getinfo( $this->_inst_pcurl );
+        $this->_response['responce'] = curl_getinfo( $this->_instCURLCopy );
 
         curl_close($this->_instCURLCopy);
 

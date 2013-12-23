@@ -54,14 +54,17 @@ class KitCurlRequest {
     {
         $this->_inst_responce->start();
 
+
         if($this->_inst_caller->cache_enable() &&
         (FALSE !== ($data_array=$this->_inst_caller->cache()->get($this->url))))
         {
+            //echo "CHHHHESE";
             $data=$data_array['data'];
             $head=$data_array['head'];
         }
         else
         {
+
             $this->_inst_pcurl->load($this->url);
             $data = $this->_inst_pcurl->getData();
             $head = $this->_inst_pcurl->getHeaders();
@@ -77,6 +80,10 @@ class KitCurlRequest {
                 );
             }
         }
+
+
+        print_r($this->_inst_caller->cache()->backend()->getServerList());
+
         $this->_inst_responce->finish(
             KitCurlStatus::SUCCESS,
             $data,

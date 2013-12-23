@@ -7,6 +7,8 @@ cd "${_INSTALLPATH}";
 echo "CURRENT DIR `pwd`"
 echo "INSTALL DIR ${_INSTALLPATH}"
 
+_MYLUCKYPATHIS=`pwd`
+
 _PHPDOC="bin/phpdoc.php"
 
 
