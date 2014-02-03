@@ -84,7 +84,7 @@ Installation is done in bash (for now)
          echo Kit\KitCurlSingleton() -> new_http_rawget(<url>) -> noCache -> execute();
 
 
-** The working with the response **
+** Working with the response **
 
          
          // get contents
