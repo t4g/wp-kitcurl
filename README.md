@@ -112,7 +112,7 @@ Installation is done in bash (for now)
               'version' => 'test'.
          )
          
-         echo $kitcurl -> new_http_get('example') -> params($param) -> execute();
+         echo $kitcurl -> new_http_get('example') -> params($nparam) -> execute();
          
          
 #### POST requests
