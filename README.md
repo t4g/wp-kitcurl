@@ -1,7 +1,6 @@
 wp-kitcurl
 =============
 
-### This project is in heavy beta & refactoring!
 
 ##Introduction
 
