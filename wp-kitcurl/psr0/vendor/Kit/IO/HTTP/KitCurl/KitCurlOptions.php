@@ -19,4 +19,6 @@ class KitCurlOptions {
 
     const CACHE_ENGINE_FILE      = 'File';
 
+    const CACHE_ENGINE_REDIS     = 'Redis';
+
 } 
